@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Agenda | Rota & Café{% endblock %}
+{% block content %}
+<section class="container py-5">
+  <p class="text-uppercase text-secondary fw-semibold">Programe-se</p>
+  <h1 class="mb-4">Agenda da comunidade</h1>
+  <div class="table-responsive shadow-sm rounded bg-white">
+    <table class="table table-hover mb-0">
+      <thead class="table-light"><tr><th>Data</th><th>Evento</th><th>Local</th><th>Horário</th></tr></thead>
+      <tbody>
+        {% for evento in eventos %}
+        <tr><td>{{ evento.dia }}</td><td>{{ evento.evento }}</td><td>{{ evento.local }}</td><td>{{ evento.horario }}</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Rota & Café | Início{% endblock %}
+{% block content %}
+<section class="hero py-5 text-center">
+  <div class="container py-4">
+    <p class="text-uppercase fw-semibold mb-2">Seu próximo café começa aqui</p>
+    <h1 class="display-4 fw-bold">Pequenas pausas, bons encontros.</h1>
+    <p class="lead mx-auto">Um roteiro simples para conhecer cafeterias cheias de personalidade.</p>
+    <a class="btn btn-coffee btn-lg mt-2" href="{{ url_for('cafeterias') }}">Ver cafeterias</a>
+  </div>
+</section>
+
+<section class="container py-5">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="h3 mb-0">Destaques da semana</h2>
+    <a href="{{ url_for('cafeterias') }}" class="link-coffee">Ver todas</a>
+  </div>
+  <div class="row g-4">
+    {% for cafeteria in cafeterias %}
+    <div class="col-md-6">
+      <article class="card h-100 border-0 shadow-sm">
+        <div class="card-body">
+          <p class="text-uppercase small text-secondary mb-2">{{ cafeteria.bairro }}</p>
+          <h3 class="h4">{{ cafeteria.nome }}</h3>
+          <p>{{ cafeteria.descricao }}</p>
+          <span class="badge text-bg-light">Peça: {{ cafeteria.especialidade }}</span>
+        </div>
+      </article>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

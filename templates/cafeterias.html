@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Cafeterias | Rota & Café{% endblock %}
+{% block content %}
+<section class="container py-5">
+  <p class="text-uppercase text-secondary fw-semibold">Roteiro</p>
+  <h1 class="mb-4">Cafeterias para visitar</h1>
+  <div class="row g-4">
+    {% for cafeteria in cafeterias %}
+    <div class="col-md-6 col-lg-4">
+      <article class="card h-100 border-0 shadow-sm">
+        <div class="card-body d-flex flex-column">
+          <p class="small text-secondary mb-2">{{ cafeteria.bairro }}</p>
+          <h2 class="h4">{{ cafeteria.nome }}</h2>
+          <p>{{ cafeteria.descricao }}</p>
+          <p class="mb-3"><strong>Experimente:</strong> {{ cafeteria.especialidade }}</p>
+          {% if cafeteria.aberta %}
+          <span class="badge text-bg-success align-self-start mt-auto">Aberta hoje</span>
+          {% else %}
+          <span class="badge text-bg-secondary align-self-start mt-auto">Fechada hoje</span>
+          {% endif %}
+        </div>
+      </article>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
