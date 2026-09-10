@@ -1,0 +1,8 @@
+:root { --coffee: #55352b; --cream: #f7f1e8; }
+body { color: #2d2420; }
+.bg-coffee { background-color: var(--coffee); }
+.hero { background: var(--cream); }
+.hero .lead { max-width: 620px; }
+.btn-coffee { background: var(--coffee); border-color: var(--coffee); color: #fff; }
+.btn-coffee:hover { background: #3f261e; border-color: #3f261e; color: #fff; }
+.link-coffee { color: var(--coffee); font-weight: 600; }
